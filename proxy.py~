@@ -24,24 +24,24 @@ def proxyrun(keyword,url,proxyinterval):
 			'''print response.read()'''
 			baiduresponse = response.read()
 			
-			pattern = re.compile(r'(EC_desc|EC_url)"\s*href="(.+)"(\s*target.+|><span>)'+url)
-			#print baiduresponse			
+			pattern = re.compile(r'EC_url"\s*href="(.+)"><span>'+url)
+			'''print baiduresponse			
+			responsefile = open('log.txt','w')
+			responsefile.writelines(baiduresponse)
+			responsefile.close
 				
 			if 'www.debaa' in baiduresponse:
-				print 'ok'
+				print 'ok'''
 			match = pattern.search(baiduresponse)
 
 			if match:
 				print pattern.groups
-				requesturl = match.group(2)
+				requesturl = match.group(1)
 				print requesturl
 				response2 = urllib2.urlopen(requesturl)
 			else:
 				print 'no the fuck url'
-			        responsefile = open('log.txt','a')
-                	        responsefile.writelines(baiduresponse)
-        	                responsefile.close
-	
+
 			
 			time.sleep(proxyinterval);
 
