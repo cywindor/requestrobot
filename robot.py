@@ -7,4 +7,5 @@ def start(runtimes,interval,proxyinterval,keyword,url):
                 time.sleep(interval) 
 
 if __name__ == '__main__':
-	start(2,60,30,'超市管理','www.debaa.com')
+	start(2,60,30,'钢构图纸','www.beewm.com')
+#	start(2,60,30,'超市管理','www.debaa.com')
